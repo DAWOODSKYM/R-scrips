@@ -1,0 +1,18 @@
+#name: David muchiri
+#reg No. Enc222_0131/2018
+library("sf")
+library("tmap")
+counties <- st_read("data/counties.shp")
+cols<-names(counties)
+print(cols)
+#plot(counties["Av_HH_Size"],breaks=c(1,2,3,4,5,6,7,8,9,10))
+Map1<-tm_shape(counties)+ tm_fill()
+#print(Map1)
+Map2<-tm_shape(counties)+ tm_borders()
+#print(Map2)
+#Map3<-tm_shape(counties)+ tm_borders()+ tm fill()
+#print(Map3)
+male_map=tm_shape(counties)+ tm_polygons("male_2019")
+print(male_map)
+Map4 <- tm_arrange(Map1,Map2)
+print(Map4)

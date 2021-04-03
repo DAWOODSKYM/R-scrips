@@ -1,0 +1,18 @@
+#name: David muchiri
+#reg No. Enc222_0131/2018
+library("sf")
+library("spData")
+col <-names(world)
+print(col)
+plot(world)
+#plot(world["lifeExp"])
+#plot(world["pop"])
+africa <- world[(world$continent=="Africa"),]
+#plot(africa["lifeExp"],)
+#plot
+png("africa_Le.png",width=350,height=350)
+plot(africa["lifeExp"],main="LifeExpectancy",breaks=c(0,20,40,60,80,100))
+#mtext("Name:David muchiri",side=1,line=2.5,at=0.11)
+#mtext("Reg No:Enc222_0131_2018",side=1,line=3.5, at=0.2)
+dev.off()
+

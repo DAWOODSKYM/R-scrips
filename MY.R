@@ -1,0 +1,7 @@
+library("sf")
+library("tmap")
+world<- st_read("world/worl2/TM_WORLD_BORDERS-0.3.shp")
+mymap<- subset(world["UN"], world$NAME%in% c("Argentina","Bolivia","Brazil","Chile", "Colombia","Ecador","Guyana","Paraguay","Peru","Suriname","Uruguay","Venezuela"))
+cols<-names(mymap)
+print(cols)
+plot(mymap)
